@@ -1,16 +1,7 @@
 <?php
 session_start();
     // Conexión a la base de datos
-    $servername = "localhost";
-    $username = "contador";
-    $password = "123456";
-    $dbname = "contadorvirtual";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Verificar conexión
-    if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-    }
+    include 'funciones/comprobar_conexion.php';
 
     // Recibir valores del formulario de inicio de sesión
     $usuario = htmlspecialchars($_POST['usuario']);

@@ -5,15 +5,8 @@ if (!isset($_SESSION['usuario_sesion'])) {
     header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit();
 } else {
-    $host = "localhost";
-    $username = "contador";
-    $password = "123456";
-    $dbname = "contadorvirtual";
-    $conn = mysqli_connect($host, $username, $password, $dbname);
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
+    include 'funciones/comprobar_conexion.php';
+    
     if (!isset($_POST['monto'], $_POST['nombre'])) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         die();

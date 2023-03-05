@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'comprobar_conexion.php';
+include 'funciones/comprobar_conexion.php';
 
   if (isset($_POST['sueldo']) === true) {
     $sueldo = $_POST['sueldo'];
