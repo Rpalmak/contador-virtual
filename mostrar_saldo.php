@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['usuario_sesion'])){
-  include 'comprobar_conexion.php';
+  include 'funciones/comprobar_conexion.php';
   // Consulta para sueldo
   $sql = "SELECT id, monto FROM sueldo WHERE id_usuario=?";
   $stmt = $conn->prepare($sql);

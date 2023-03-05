@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['usuario_sesion'])){
-    include 'comprobar_conexion.php';
+    include 'funciones/comprobar_conexion.php';
   
     $id_usuario = $_SESSION["usuario_sesion"];
     

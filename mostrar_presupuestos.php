@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['usuario_sesion'])){
-  include 'comprobar_conexion.php';
+  include 'funciones/comprobar_conexion.php';
   // Consulta para gastos
   $sql = "SELECT id, categoria, monto_total, monto_usado, monto_restante  FROM presupuestos WHERE id_usuario=?";
   $stmt = $conn->prepare($sql);

@@ -3,7 +3,7 @@
    if (!isset($_SESSION["usuario_sesion"])) {
        header("Location: Sesion.php");
    }
-   include 'comprobar_conexion.php';
+   include 'funciones/comprobar_conexion.php';
    include 'totalIngresos.php';
   
    if (isset($_SESSION['mensaje'])) {
