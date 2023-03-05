@@ -5,8 +5,8 @@
 
 <!DOCTYPE html> 
 <html lang="es">
-<html>
-<head>
+<html> 
+<head> 
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta charset="utf-8" />
     <title>Contador Virtual</title>
