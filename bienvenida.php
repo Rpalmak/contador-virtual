@@ -3,7 +3,7 @@
     $nombre = $_SESSION["usuario_sesion"];
 ?> 
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <html>
 <head>
