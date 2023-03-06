@@ -36,7 +36,7 @@ if (isset($_POST["enviar"]) )
             <nav id="menu">
                 <ul>
                     <li>
-                        <a href="Sesion.html">Iniciar sesion</a>
+                        <a href="Sesion.php">Iniciar sesion</a>
                     </li>
                 </ul>
             </nav>

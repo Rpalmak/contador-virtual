@@ -1,7 +1,11 @@
 <?php
     session_start();
+    if (!isset($_SESSION["usuario_sesion"]) || empty($_SESSION["usuario_sesion"])) {
+        header("Location: Sesion.php"); // Redireccionar al usuario al formulario de inicio de sesión
+        exit;
+    }
     $nombre = $_SESSION["usuario_sesion"];
-?> 
+?>
 
 <!DOCTYPE html> 
 <html lang="es">
