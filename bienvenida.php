@@ -1,9 +1,5 @@
 <?php
-    session_start();
-    if (!isset($_SESSION["usuario_sesion"]) || empty($_SESSION["usuario_sesion"])) {
-        header("Location: Sesion.php"); // Redireccionar al usuario al formulario de inicio de sesión
-        exit;
-    }
+    include 'funciones/comprobar_sesion.php';
     $nombre = $_SESSION["usuario_sesion"];
 ?>
 
@@ -49,7 +45,7 @@
                     <a href="Historico.html">Histórico</a>
                 </li>
                 <li>
-                <a href="cerrar_sesion.php" class="btn btn-danger">Cerrar sesión</a>
+                <a href="funciones/cerrar_sesion.php" class="btn btn-danger">Cerrar sesión</a>
                 </li>
             </ul>
         </nav>

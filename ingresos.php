@@ -1,8 +1,5 @@
 <?php
-   session_start();
-   if (!isset($_SESSION["usuario_sesion"])) {
-       header("Location: Sesion.php");
-   }
+   include 'funciones/comprobar_sesion.php';
    include 'funciones/comprobar_conexion.php';
    include 'totalIngresos.php';
   
@@ -57,7 +54,7 @@ $mesNombre = $meses[$mesNumero['mes']];
                         <a href="Historico.html">Histórico</a>
                      </li>
                      <li>
-                        <a href="cerrar_sesion.php" class="btn btn-danger">Cerrar sesión</a>
+                        <a href="funciones/cerrar_sesion.php" class="btn btn-danger">Cerrar sesión</a>
                      </li>
                   </ul>
                </nav>
