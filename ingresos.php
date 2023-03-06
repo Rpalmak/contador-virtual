@@ -125,7 +125,8 @@ $mesNombre = $meses[$mesNumero['mes']];
   function ingresarSueldo() {
   let sueldo = document.getElementById("sueldo").value;
   if (sueldo === "") {
-    alert("Sueldo no está definido");
+   event.preventDefault();
+    alert("Debe ingresar un valor");
     return;
   }
   let xhr = new XMLHttpRequest();
@@ -147,7 +148,12 @@ $mesNombre = $meses[$mesNumero['mes']];
 
 
 
-  function ingresarOtros(monto, nombre) {
+function ingresarOtros(monto, nombre) {
+    if (!monto || !nombre) {
+      event.preventDefault();
+        alert("Debe ingresar valores en los campos monto y nombre");
+        return;
+    }
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "ingresarOtros.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -163,6 +169,8 @@ $mesNombre = $meses[$mesNumero['mes']];
     };
     xhr.send("monto=" + monto + "&nombre=" + nombre);
 }
+
+
 
 
 

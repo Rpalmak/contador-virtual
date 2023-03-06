@@ -6,13 +6,17 @@ if (!isset($_SESSION['usuario_sesion'])) {
     exit();
 } else {
     include 'funciones/comprobar_conexion.php';
-    
-    if (!isset($_POST['monto'], $_POST['nombre'])) {
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+
+    $monto = $_POST['monto'];
+    $nombre = $_POST['nombre'];
+
+    if (empty($monto) || empty($nombre)) {
+        $respuesta = array("status" => "error", "message" => "Debe ingresar valores en los campos monto y nombre");
+        header('Content-Type: application/json');
+        echo json_encode($respuesta);
         die();
     }
 
-    $monto = $_POST['monto'];
     $usuario_sesion = $_SESSION['usuario_sesion'];
     $mes = date('F');
     $meses = array(
@@ -30,7 +34,6 @@ if (!isset($_SESSION['usuario_sesion'])) {
         'December' => 'Diciembre'
     );
     $mes = $meses[$mes];
-    $nombre = $_POST['nombre'];
     $fecha = date('Y-m-d H:i:s');
     $sql = "INSERT INTO ingresos (fecha, id_usuario, nombre, monto, mes) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
@@ -45,4 +48,5 @@ if (!isset($_SESSION['usuario_sesion'])) {
     header('Content-Type: application/json');
     echo json_encode($respuesta);
 }
+
 ?>

@@ -35,6 +35,4 @@ include 'funciones/comprobar_conexion.php';
   }
   echo json_encode($respuesta);
   mysqli_close($conn);
-
-
 ?>
